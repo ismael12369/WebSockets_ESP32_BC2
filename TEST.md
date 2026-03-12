@@ -33,6 +33,5 @@ Porque las conexiones pueden fallar y así evitamos que el programa se cierre po
 9. **En la función de encender el LED en Python, enviamos el comando así: `sock.send(b'ON')`. ¿Qué significa esa letra `b` antes de las comillas y por qué no enviamos un texto normal?**
 Significa que se envía el mensaje en bytes, que es el formato que usan las conexiones de red para transmitir datos.
 
-
-11. **Describe brevemente el flujo de datos: ¿Qué camino recorre la información desde que giras el potenciómetro físicamente hasta que la barra se mueve en la pantalla de la computadora?**
-    > *Tu respuesta aquí*
+10. **Describe brevemente el flujo de datos: ¿Qué camino recorre la información desde que giras el potenciómetro físicamente hasta que la barra se mueve en la pantalla de la computadora?**
+Cuando giro el potenciómetro, el ESP32 lee el valor analógico usando el ADC. Ese valor se envía por WiFi a través de un socket TCP hacia la computadora. El programa en Python recibe el dato, lo procesa y actualiza la barra de progreso en Tkinter, haciendo que se mueva según el valor recibido.
